@@ -17,8 +17,10 @@ class AddTasks : AppCompatActivity() {
         db= TaskDatabase(this)
         binding.saveBt.setOnClickListener {
             val title=binding.titleEdit.text.toString()
-            val time=binding.timeEdit.text.toString()
-            val task=Task(0,title,time)
+            val description=binding.descriptionEdit.text.toString()
+            val priority=binding.priorityEdit.text.toString()
+            val deadline=binding.deadlineEdit.text.toString()
+            val task=Task(0,title,description,priority,deadline)
             db.insertTask(task)
             finish()
             Toast.makeText(this,"Note Saved",Toast.LENGTH_SHORT).show()

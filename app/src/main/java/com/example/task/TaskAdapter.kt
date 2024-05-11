@@ -15,7 +15,9 @@ class TaskAdapter (private var tasks:List<Task>,context: Context):
         private val db:TaskDatabase= TaskDatabase(context)
     class TaskViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
         val titleTextView:TextView=itemView.findViewById(R.id.titleText)
-        val timeTextView:TextView=itemView.findViewById(R.id.time)
+        val descriptionTextView:TextView=itemView.findViewById(R.id.description)
+        val priorityTextView:TextView=itemView.findViewById(R.id.priority)
+        val deadlineTextView:TextView=itemView.findViewById(R.id.deadline)
         val updateButton:ImageView=itemView.findViewById(R.id.updatebtn)
         val deleteButton:ImageView=itemView.findViewById(R.id.deletebtn)
 
@@ -31,7 +33,9 @@ class TaskAdapter (private var tasks:List<Task>,context: Context):
     override fun onBindViewHolder(holder: TaskAdapter.TaskViewHolder, position: Int) {
         val task=tasks[position]
         holder.titleTextView.text=task.title
-        holder.timeTextView.text=task.time
+        holder.descriptionTextView.text=task.description
+        holder.priorityTextView.text=task.priority
+        holder.deadlineTextView.text=task.deadline
 
         holder.updateButton.setOnClickListener {
             val intent=Intent(holder.itemView.context,UpdateTask::class.java).apply {

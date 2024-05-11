@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddTasks">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/addtask"
@@ -48,27 +52,81 @@
         android:layout_marginEnd="16dp"/>
 
     <TextView
-        android:id="@+id/time"
+        android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/titleEdit"
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/poppins"
-        android:text="Task Time"
+        android:text="Task Description"
         android:textColor="@color/green"
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/timeEdit"
+        android:id="@+id/descriptionEdit"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@+id/time"
+        android:layout_below="@+id/description"
         android:layout_marginStart="16dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/yellow_border"
-        android:hint="Enter the time"
+        android:hint="Enter the description"
+        android:maxLines="1"
+        android:padding="12dp"
+        android:textSize="20sp" />
+
+
+    <TextView
+        android:id="@+id/priority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descriptionEdit"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/poppins"
+        android:text="Task Priority"
+        android:textColor="@color/green"
+        android:textSize="20sp" />
+
+
+    <EditText
+        android:id="@+id/priorityEdit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/priority"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/yellow_border"
+        android:hint="Enter the priority"
+        android:maxLines="1"
+        android:padding="12dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/deadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/priorityEdit"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/poppins"
+        android:text="Task Deadline"
+        android:textColor="@color/green"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/deadlineEdit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/deadline"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/yellow_border"
+        android:hint="Enter the deadline"
         android:maxLines="1"
         android:padding="12dp"
         android:textSize="20sp" />
@@ -80,12 +138,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="146dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="3dp"
+        android:layout_below="@+id/deadlineEdit"
 
-        android:layout_marginEnd="183dp"
-        android:layout_marginBottom="343dp"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="144dp"
         android:src="@drawable/baseline_done_outline_24" />
 
 
 </RelativeLayout>
+    </ScrollView>

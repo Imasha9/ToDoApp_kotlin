@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddTasks">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/edittask"
@@ -48,44 +52,99 @@
         android:layout_marginEnd="16dp"/>
 
     <TextView
-        android:id="@+id/edittime"
+        android:id="@+id/editdescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edittitle"
+        android:layout_below="@+id/edittitleText"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="98dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/poppins"
-        android:text="Task Time"
+        android:text="Task Description"
         android:textColor="@color/green"
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/edittimeText"
+        android:id="@+id/editdescriptionText"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@+id/edittime"
+        android:layout_below="@+id/editdescription"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/yellow_border"
-        android:hint="Enter the time"
+        android:hint="Enter the Description"
         android:maxLines="1"
         android:padding="12dp"
         android:textSize="20sp" />
 
-    <ImageView
-        android:id="@+id/updatesaveBtn"
-        android:layout_width="81dp"
-        android:layout_height="69dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="154dp"
-        android:layout_marginTop="380dp"
+    <TextView
+        android:id="@+id/editpriority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editdescriptionText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/poppins"
+        android:text="Task Priority"
+        android:textColor="@color/green"
+        android:textSize="20sp" />
 
-        android:layout_marginEnd="175dp"
-        android:layout_marginBottom="361dp"
-        android:src="@drawable/baseline_done_outline_24" />
+    <EditText
+        android:id="@+id/editprioritytext"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/editpriority"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/yellow_border"
+        android:hint="Enter the priority"
+        android:maxLines="1"
+        android:fontFamily="@font/poppins"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/editdeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editprioritytext"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/poppins"
+        android:text="Task Deadline"
+        android:textColor="@color/green"
+        android:textSize="20sp" />
 
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/editdeadlinetext"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/editdeadline"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/yellow_border"
+            android:hint="Enter deadline"
+            android:maxLines="1"
+            android:padding="12dp"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/updatesaveBtn"
+            android:layout_width="81dp"
+            android:layout_height="69dp"
+            android:layout_below="@+id/editdeadlinetext"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginBottom="94dp"
+            android:src="@drawable/baseline_done_outline_24" />
+
+
+    </RelativeLayout>
+</ScrollView>

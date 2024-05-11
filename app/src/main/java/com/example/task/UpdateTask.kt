@@ -27,12 +27,16 @@ class UpdateTask : AppCompatActivity() {
 
         val task=db.getTaskById(taskId )
         binding.edittitleText.setText(task.title)
-        binding.edittimeText.setText(task.time)
+        binding.editdescriptionText.setText(task.description)
+        binding.editprioritytext.setText(task.priority)
+        binding.editdeadlinetext.setText(task.deadline)
 
         binding.updatesaveBtn.setOnClickListener{
             val newtitle=binding.edittitleText.text.toString()
-            val newtime=binding.edittimeText.text.toString()
-            val updatetask=Task(taskId,newtitle,newtime)
+            val newdescription=binding.editdescriptionText.text.toString()
+            val newpriority=binding.editprioritytext.text.toString()
+            val newdeadline=binding.editdeadlinetext.text.toString()
+            val updatetask=Task(taskId,newtitle,newdescription,newpriority,newdeadline)
             db.updateTask(updatetask)
             finish()
             Toast.makeText(this,"Change Saved",Toast.LENGTH_SHORT).show()
