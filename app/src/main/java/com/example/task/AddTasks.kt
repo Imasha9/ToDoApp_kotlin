@@ -20,11 +20,21 @@ class AddTasks : AppCompatActivity() {
             val description=binding.descriptionEdit.text.toString()
             val priority=binding.priorityEdit.text.toString()
             val deadline=binding.deadlineEdit.text.toString()
-            val task=Task(0,title,description,priority,deadline)
-            db.insertTask(task)
-            finish()
-            Toast.makeText(this,"Note Saved",Toast.LENGTH_SHORT).show()
 
+            if (title.isBlank() || description.isBlank() || priority.isBlank() || deadline.isBlank()) {
+                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+            } else {
+                val task = Task(0, title, description, priority, deadline)
+                db.insertTask(task)
+                finish()
+                Toast.makeText(this, "Note Saved", Toast.LENGTH_SHORT).show()
+            }
         }
+        binding.cnclBt.setOnClickListener {
+            finish()
+        }
+
+
+
     }
 }

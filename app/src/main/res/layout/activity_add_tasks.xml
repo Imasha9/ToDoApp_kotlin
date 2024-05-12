@@ -131,21 +131,37 @@
         android:padding="12dp"
         android:textSize="20sp" />
 
-    <ImageView
-        android:id="@+id/saveBt"
-        android:layout_width="81dp"
-        android:layout_height="69dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="3dp"
-        android:layout_below="@+id/deadlineEdit"
+        <Button
+            android:id="@+id/saveBt"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/deadlineEdit"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="245dp"
+            android:layout_marginBottom="77dp"
+            android:text="Save"
+            android:textSize="18dp" />
 
-        android:layout_marginEnd="184dp"
-        android:layout_marginBottom="144dp"
-        android:src="@drawable/baseline_done_outline_24" />
+        <Button
+            android:id="@+id/cnclBt"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/deadlineEdit"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="235dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginBottom="7dp"
+            android:src="@drawable/baseline_close_24"
+            android:text="Cancel"
+            android:textSize="18dp" />
 
 
-</RelativeLayout>
+    </RelativeLayout>
     </ScrollView>

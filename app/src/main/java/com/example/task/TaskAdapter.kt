@@ -13,6 +13,17 @@ import androidx.recyclerview.widget.RecyclerView
 class TaskAdapter (private var tasks:List<Task>,context: Context):
     RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
         private val db:TaskDatabase= TaskDatabase(context)
+    private val originalTasks: List<Task> = tasks.toList()
+
+    fun filterTasks(query: String) {
+        val filteredTasks = originalTasks.filter { task ->
+            task.title.contains(query, ignoreCase = true) || // Filter by title
+                    task.description.contains(query, ignoreCase = true) || // Filter by description
+                    task.priority.contains(query, ignoreCase = true) || // Filter by priority
+                    task.deadline.contains(query, ignoreCase = true) // Filter by deadline
+        }
+        refreshData(filteredTasks)
+    }
     class TaskViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
         val titleTextView:TextView=itemView.findViewById(R.id.titleText)
         val descriptionTextView:TextView=itemView.findViewById(R.id.description)

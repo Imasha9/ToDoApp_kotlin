@@ -41,5 +41,9 @@ class UpdateTask : AppCompatActivity() {
             finish()
             Toast.makeText(this,"Change Saved",Toast.LENGTH_SHORT).show()
         }
+
+        binding.cnclBt.setOnClickListener {
+            finish()
+        }
     }
 }
